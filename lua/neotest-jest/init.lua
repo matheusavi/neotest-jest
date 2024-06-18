@@ -426,7 +426,7 @@ function adapter.build_spec(args)
     "--outputFile=" .. results_path,
     "--testNamePattern=" .. testNamePattern,
     "--forceExit",
-    escapeTestPattern(reducePattern(cwd, pos.path)),
+    escapeTestPattern(reducePattern(cwd, pos.path)):gsub("\\", ""),
   })
 
   -- creating empty file for streaming results
